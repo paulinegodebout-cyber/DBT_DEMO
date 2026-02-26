@@ -1,0 +1,12 @@
+version: 2
+
+models:
+    - name: stg_orders
+      columns:
+        - name: orders_id
+        - name: orders_customer
+        - name: orders_ordered_at
+        - name: orders_store_id
+        - name: orders_subtotal
+        - name: orders_tax_paid
+        - name: orders_order_total
