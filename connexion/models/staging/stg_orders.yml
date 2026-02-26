@@ -3,10 +3,18 @@ version: 2
 models:
     - name: stg_orders
       columns:
-        - name: orders_id
-        - name: orders_customer
-        - name: orders_ordered_at
-        - name: orders_store_id
-        - name: orders_subtotal
-        - name: orders_tax_paid
+        - name: order_id
+          tests:
+          - unique
+          - not_null
+        - name: customer_id
+          tests:
+          - not_null
+          - relationships:   # LE BONUS
+              to: ref('stg_customers')
+              field: customer_id
+        - name: order_date
+        - name: store_id
+        - name: subtotal
+        - name: tax_paid
         - name: orders_order_total
